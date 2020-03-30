@@ -47,19 +47,16 @@ struct SurfaceView: View {
   var body: some View {
     VStack {
       // 1
-      Text("drag offset = w:\(dragOffset.width), h:\(dragOffset.height)")
-      Text("portal offset = x:\(portalPosition.x), y:\(portalPosition.y)")
-      Text("zoom = \(zoomScale)")
+      Helpers(mesh: mesh, selection: selection)
       TextField("Breathe…", text: self.$selection.editingText, onCommit: {
         if let node = self.selection.onlySelectedNode(in: self.mesh) {
           self.mesh.updateNodeText(node, string: self.self.selection.editingText)
         }
-        }).padding()
+      }).padding()
       // 2
       GeometryReader { geometry in
         // 3
         ZStack {
-          Rectangle().fill(Color.yellow)
           MapView(selection: self.selection, mesh: self.mesh)
             .scaleEffect(self.zoomScale)
             //4

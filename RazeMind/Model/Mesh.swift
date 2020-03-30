@@ -137,7 +137,7 @@ extension Mesh {
     return child
   }
 
-  @discardableResult func addSibling(_ node: Node) -> Node? {
+  @discardableResult func addSibling(_ node: Node, at point: CGPoint? = nil) -> Node? {
 
     guard node.id != rootNodeID else {
       return nil
@@ -146,7 +146,7 @@ extension Mesh {
     let parentedges = edges.filter({ $0.end == node.id })
     if let parentedge = parentedges.first,
       let parentnode = nodeWithID(parentedge.start) {
-      let sibling = addChild(parentnode)
+      let sibling = addChild(parentnode, at: point)
       return sibling
     }
     return nil

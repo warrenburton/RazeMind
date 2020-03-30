@@ -40,8 +40,9 @@ struct Helpers: View {
     ZStack {
       HStack(spacing: 16.0) {
         Button(action: {
-          if let node = self.onlySelectedNode() {
-            let child = self.mesh.addChild(node)
+          if let parent = self.onlySelectedNode() {
+            let position = self.mesh.positionForNewChild(parent, length: 300)
+            let child = self.mesh.addChild(parent, at: position)
             self.selection.selectNode(child)
           }
         }) {
@@ -58,8 +59,12 @@ struct Helpers: View {
         }
         .foregroundColor(self.onlyOneNodeSelected ? Color.purple:Color.gray)
         Button(action: {
-          if let node = self.onlySelectedNode(), self.canAddSibling {
+          if let node = self.onlySelectedNode(),
+            self.canAddSibling,
+            let parent = self.mesh.locateParent(node) {
             if let sibling = self.mesh.addSibling(node) {
+              let position = self.mesh.positionForNewChild(parent, length: 300)
+              self.mesh.positionNode(sibling, position: position)
               self.selection.selectNode(sibling)
             }
           }
