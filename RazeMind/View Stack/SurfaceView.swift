@@ -57,6 +57,7 @@ struct SurfaceView: View {
       GeometryReader { geometry in
         // 3
         ZStack {
+          Rectangle().fill(Color(UIColor.systemBackground))
           MapView(selection: self.selection, mesh: self.mesh)
             .scaleEffect(self.zoomScale)
             //4
@@ -64,6 +65,7 @@ struct SurfaceView: View {
                     y: self.portalPosition.y + self.dragOffset.height)
             .animation(.easeIn)
         }
+        .drawingGroup(opaque: true, colorMode: .extendedLinear)
         .gesture(DragGesture()
         .onChanged { value in
           self.processDragChange(value, containerSize: geometry.size)
