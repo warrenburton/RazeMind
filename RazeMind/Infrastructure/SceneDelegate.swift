@@ -33,12 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
 
-  @Published var mesh = Mesh.sampleMesh()
+  @Published var mesh = restore()
   @Published var selection = SelectionHandler()
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-    //let contentView = BoringListView(mesh: mesh, selection: selection)
     let contentView = SurfaceView(mesh: mesh, selection: selection)
 
     // Use a UIHostingController as window root view controller.
@@ -48,6 +47,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       self.window = window
       window.makeKeyAndVisible()
     }
+  }
+
+  func sceneDidEnterBackground(_ scene: UIScene) {
+    save()
+  }
+  
+  func save() {
+    do {
+      try StorageHandler().save(mesh.storageObject)
+      DLog("MSG: Mesh save OK")
+    } catch {
+      DLog("ERROR: Mesh save failed -",error)
+    }
+  }
+  
+  static func restore() -> Mesh {
+    let proxy = StorageHandler().restore()
+    let mesh = Mesh(storage: proxy)
+    return mesh
   }
 
 }

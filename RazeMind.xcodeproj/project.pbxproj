@@ -13,6 +13,10 @@
 		AD40E9B823D9BFC6004F0A07 /* EdgeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B723D9BFC6004F0A07 /* EdgeMapView.swift */; };
 		AD40E9BA23D9C106004F0A07 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B923D9C106004F0A07 /* MapView.swift */; };
 		AD40E9BC23D9C21A004F0A07 /* SurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9BB23D9C21A004F0A07 /* SurfaceView.swift */; };
+		AD6C18C424339B8B0030CC51 /* Mesh+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */; };
+		AD6C18C62434A9880030CC51 /* StorageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C52434A9880030CC51 /* StorageHandler.swift */; };
+		AD6C18C82434AA420030CC51 /* UIApplication+Directories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */; };
+		AD6C18CA2434ABCA0030CC51 /* SimpleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */; };
 		AD7C16A423D46E4D00A3FEA3 /* Mesh+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */; };
 		AD7C16AA23D7151900A3FEA3 /* BoringListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C16A923D7151900A3FEA3 /* BoringListView.swift */; };
 		ADC9090F23C3D31300394ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9090E23C3D31300394ADF /* AppDelegate.swift */; };
@@ -36,6 +40,10 @@
 		AD40E9B723D9BFC6004F0A07 /* EdgeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeMapView.swift; sourceTree = "<group>"; };
 		AD40E9B923D9C106004F0A07 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		AD40E9BB23D9C21A004F0A07 /* SurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceView.swift; sourceTree = "<group>"; };
+		AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Storage.swift"; sourceTree = "<group>"; };
+		AD6C18C52434A9880030CC51 /* StorageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHandler.swift; sourceTree = "<group>"; };
+		AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Directories.swift"; sourceTree = "<group>"; };
+		AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogger.swift; sourceTree = "<group>"; };
 		AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Demo.swift"; sourceTree = "<group>"; };
 		AD7C16A923D7151900A3FEA3 /* BoringListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoringListView.swift; sourceTree = "<group>"; };
 		ADC9090B23C3D31300394ADF /* RazeMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RazeMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,8 +93,10 @@
 		AD7C16A523D644A500A3FEA3 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */,
 				ADC9090E23C3D31300394ADF /* AppDelegate.swift */,
 				ADC9091023C3D31300394ADF /* SceneDelegate.swift */,
+				AD6C18C52434A9880030CC51 /* StorageHandler.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -94,6 +104,7 @@
 		AD7C16A623D644C100A3FEA3 /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */,
 				ADC9094123C52B8B00394ADF /* CGPoint+Help.swift */,
 			);
 			path = Help;
@@ -137,6 +148,7 @@
 			children = (
 				ADC9093923C5265D00394ADF /* Edge.swift */,
 				ADC9093723C5265D00394ADF /* Mesh.swift */,
+				AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */,
 				AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */,
 				ADC9093B23C5265D00394ADF /* Mesh+MathHelp.swift */,
 				ADC9093A23C5265D00394ADF /* Node.swift */,
@@ -232,6 +244,10 @@
 				AD40E9B423D9BDBD004F0A07 /* EdgeView.swift in Sources */,
 				ADC9090F23C3D31300394ADF /* AppDelegate.swift in Sources */,
 				ADC9091123C3D31300394ADF /* SceneDelegate.swift in Sources */,
+				AD6C18CA2434ABCA0030CC51 /* SimpleLogger.swift in Sources */,
+				AD6C18C82434AA420030CC51 /* UIApplication+Directories.swift in Sources */,
+				AD6C18C424339B8B0030CC51 /* Mesh+Storage.swift in Sources */,
+				AD6C18C62434A9880030CC51 /* StorageHandler.swift in Sources */,
 				AD40E9B623D9BE98004F0A07 /* NodeMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

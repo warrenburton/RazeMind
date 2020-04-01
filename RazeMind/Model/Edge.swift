@@ -48,3 +48,5 @@ extension Edge {
     return lhs.start == rhs.start && lhs.end == rhs.end
   }
 }
+
+extension Edge:Codable {}

@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>FILEHEADER</key>
-	<string>MIT License
+//MIT License
 //
 //Copyright (c) [2020] [Warren Burton]
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
-//of this software and associated documentation files (the &quot;Software&quot;), to deal
+//of this software and associated documentation files (the "Software"), to deal
 //in the Software without restriction, including without limitation the rights
 //to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 //copies of the Software, and to permit persons to whom the Software is
@@ -17,12 +12,28 @@
 //The above copyright notice and this permission notice shall be included in all
 //copies or substantial portions of the Software.
 //
-//THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//SOFTWARE.</string>
-</dict>
-</plist>
+//SOFTWARE.
+
+import UIKit
+
+extension UIApplication {
+    static func cacheDirectory() -> URL {
+        guard let cachepath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last else {
+            fatalError("unable to get system cache directory - serious problems")
+        }
+        return URL(fileURLWithPath: cachepath)
+    }
+
+    static func documentsDirectory() -> URL {
+        guard let docspath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last else {
+            fatalError("unable to get system docs directory - serious problems")
+        }
+        return URL(fileURLWithPath: docspath)
+    }
+}

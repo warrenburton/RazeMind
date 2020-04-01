@@ -34,12 +34,21 @@ class Mesh: ObservableObject {
   let rootNodeID: NodeID
   @Published var nodes = [Node]()
   @Published var editingText: String
+  
 
   init() {
-    self.editingText = ""
+    editingText = ""
     let root = Node(text: "root")
     rootNodeID = root.id
     addNode(root)
+  }
+  
+  init(storage: MeshStorageProxy) {
+    editingText = ""
+    rootNodeID = storage.rootNodeID
+    nodes = storage.nodes
+    edges = storage.edges
+    rebuildLinks()
   }
 
   var edges = [Edge]() {
@@ -78,6 +87,8 @@ class Mesh: ObservableObject {
   }
 
 }
+
+
 
 extension Mesh {
 

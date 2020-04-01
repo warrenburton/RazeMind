@@ -48,3 +48,5 @@ extension Node {
     return lhs.id == rhs.id
   }
 }
+
+extension Node: Codable {}
