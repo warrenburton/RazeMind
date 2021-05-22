@@ -105,13 +105,22 @@ extension Mesh {
     rebuildLinks()
   }
 
-  func processNodeTranslation(_ translation: CGSize, nodes: [DragInfo]) {
+  func processNodeTranslation(_ translation: CGSize, nodes: [DragInfo], snapToGrid: Bool = false) {
     nodes.forEach({ draginfo in
       if let node = nodeWithID(draginfo.id) {
-        let nextPosition = draginfo.originalPosition.translatedBy(x: translation.width, y: translation.height)
+        var nextPosition = draginfo.originalPosition.translatedBy(x: translation.width, y: translation.height)
+        if snapToGrid {
+          let granularity: CGFloat = 10.0
+          nextPosition.x = (nextPosition.x/granularity).rounded(.toNearestOrEven) * granularity
+          nextPosition.y = (nextPosition.y/granularity).rounded(.toNearestOrEven) * granularity
+        }
         positionNode(node, position: nextPosition)
       }
     })
+  }
+
+  func roundToTens(x : Double) -> Int {
+      return 10 * Int(round(x / 10.0))
   }
 
 }

@@ -129,13 +129,14 @@ extension SurfaceView {
   }
   
   // 4
-  func processNodeTranslation(_ translation: CGSize) {
+  func processNodeTranslation(_ translation: CGSize, snapToGrid: Bool = false) {
     guard selection.draggingNodes.isEmpty == false else {
       return
     }
     let scaledTranslation = translation.scaledDownTo(self.zoomScale)
     mesh.processNodeTranslation(scaledTranslation,
-                                nodes: selection.draggingNodes)
+                                nodes: selection.draggingNodes,
+                                snapToGrid: snapToGrid)
   }
   
   
@@ -173,7 +174,7 @@ extension SurfaceView {
       self.portalPosition = CGPoint(x: self.portalPosition.x + value.translation.width,
                                     y: self.portalPosition.y + value.translation.height)
     } else {
-      processNodeTranslation(value.translation)
+      processNodeTranslation(value.translation, snapToGrid: true)
       selection.stopDragging(mesh)
     }
   }
