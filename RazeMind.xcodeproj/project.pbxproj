@@ -3,64 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD40E9B223D9BC75004F0A07 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B123D9BC75004F0A07 /* NodeView.swift */; };
-		AD40E9B423D9BDBD004F0A07 /* EdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B323D9BDBD004F0A07 /* EdgeView.swift */; };
-		AD40E9B623D9BE98004F0A07 /* NodeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B523D9BE98004F0A07 /* NodeMapView.swift */; };
-		AD40E9B823D9BFC6004F0A07 /* EdgeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B723D9BFC6004F0A07 /* EdgeMapView.swift */; };
-		AD40E9BA23D9C106004F0A07 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9B923D9C106004F0A07 /* MapView.swift */; };
-		AD40E9BC23D9C21A004F0A07 /* SurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD40E9BB23D9C21A004F0A07 /* SurfaceView.swift */; };
-		AD6C18C424339B8B0030CC51 /* Mesh+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */; };
 		AD6C18C62434A9880030CC51 /* StorageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C52434A9880030CC51 /* StorageHandler.swift */; };
 		AD6C18C82434AA420030CC51 /* UIApplication+Directories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */; };
 		AD6C18CA2434ABCA0030CC51 /* SimpleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */; };
-		AD7C16A423D46E4D00A3FEA3 /* Mesh+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */; };
-		AD7C16AA23D7151900A3FEA3 /* BoringListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C16A923D7151900A3FEA3 /* BoringListView.swift */; };
-		ADC9090F23C3D31300394ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9090E23C3D31300394ADF /* AppDelegate.swift */; };
-		ADC9091123C3D31300394ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9091023C3D31300394ADF /* SceneDelegate.swift */; };
+		ADA4F1492A23C404005D4374 /* RazeMindCore in Frameworks */ = {isa = PBXBuildFile; productRef = ADA4F1482A23C404005D4374 /* RazeMindCore */; };
+		ADA4F14E2A23CBC5005D4374 /* BoringListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4F14D2A23CBC5005D4374 /* BoringListView.swift */; };
+		ADA4F1872A23D1B4005D4374 /* RazeMind.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4F1862A23D1B4005D4374 /* RazeMind.swift */; };
 		ADC9091823C3D31500394ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC9091723C3D31500394ADF /* Assets.xcassets */; };
 		ADC9091E23C3D31600394ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC9091C23C3D31600394ADF /* LaunchScreen.storyboard */; };
-		ADC9093C23C5265D00394ADF /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9093723C5265D00394ADF /* Mesh.swift */; };
-		ADC9093D23C5265D00394ADF /* SelectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9093823C5265D00394ADF /* SelectionHandler.swift */; };
-		ADC9093E23C5265D00394ADF /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9093923C5265D00394ADF /* Edge.swift */; };
-		ADC9093F23C5265D00394ADF /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9093A23C5265D00394ADF /* Node.swift */; };
-		ADC9094023C5265D00394ADF /* Mesh+MathHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9093B23C5265D00394ADF /* Mesh+MathHelp.swift */; };
-		ADC9094223C52B8B00394ADF /* CGPoint+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9094123C52B8B00394ADF /* CGPoint+Help.swift */; };
-		ADED744123FAAEF900AD0E39 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADED744023FAAEF900AD0E39 /* Helpers.swift */; };
-		ADED744523FAB03E00AD0E39 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADED744423FAB03E00AD0E39 /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD40E9B123D9BC75004F0A07 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
-		AD40E9B323D9BDBD004F0A07 /* EdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeView.swift; sourceTree = "<group>"; };
-		AD40E9B523D9BE98004F0A07 /* NodeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeMapView.swift; sourceTree = "<group>"; };
-		AD40E9B723D9BFC6004F0A07 /* EdgeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeMapView.swift; sourceTree = "<group>"; };
-		AD40E9B923D9C106004F0A07 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		AD40E9BB23D9C21A004F0A07 /* SurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceView.swift; sourceTree = "<group>"; };
-		AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Storage.swift"; sourceTree = "<group>"; };
 		AD6C18C52434A9880030CC51 /* StorageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHandler.swift; sourceTree = "<group>"; };
 		AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Directories.swift"; sourceTree = "<group>"; };
 		AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogger.swift; sourceTree = "<group>"; };
-		AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesh+Demo.swift"; sourceTree = "<group>"; };
-		AD7C16A923D7151900A3FEA3 /* BoringListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoringListView.swift; sourceTree = "<group>"; };
+		ADA4F14D2A23CBC5005D4374 /* BoringListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoringListView.swift; sourceTree = "<group>"; };
+		ADA4F1862A23D1B4005D4374 /* RazeMind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RazeMind.swift; sourceTree = "<group>"; };
 		ADC9090B23C3D31300394ADF /* RazeMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RazeMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADC9090E23C3D31300394ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ADC9091023C3D31300394ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ADC9091723C3D31500394ADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC9091D23C3D31600394ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ADC9091F23C3D31600394ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC9093323C3DAC900394ADF /* RazeMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RazeMind.entitlements; sourceTree = "<group>"; };
-		ADC9093723C5265D00394ADF /* Mesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
-		ADC9093823C5265D00394ADF /* SelectionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionHandler.swift; sourceTree = "<group>"; };
-		ADC9093923C5265D00394ADF /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
-		ADC9093A23C5265D00394ADF /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		ADC9093B23C5265D00394ADF /* Mesh+MathHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mesh+MathHelp.swift"; sourceTree = "<group>"; };
-		ADC9094123C52B8B00394ADF /* CGPoint+Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Help.swift"; sourceTree = "<group>"; };
-		ADED744023FAAEF900AD0E39 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		ADED744423FAB03E00AD0E39 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		ADCEE6702A23C1D60043C907 /* RazeMindCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RazeMindCore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,34 +35,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA4F1492A23C404005D4374 /* RazeMindCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD746F4423CCF41A00D126F3 /* View Stack */ = {
-			isa = PBXGroup;
-			children = (
-				ADED744023FAAEF900AD0E39 /* Helpers.swift */,
-				AD7C16A923D7151900A3FEA3 /* BoringListView.swift */,
-				AD40E9B123D9BC75004F0A07 /* NodeView.swift */,
-				AD40E9B323D9BDBD004F0A07 /* EdgeView.swift */,
-				AD40E9B523D9BE98004F0A07 /* NodeMapView.swift */,
-				AD40E9B723D9BFC6004F0A07 /* EdgeMapView.swift */,
-				AD40E9B923D9C106004F0A07 /* MapView.swift */,
-				AD40E9BB23D9C21A004F0A07 /* SurfaceView.swift */,
-				ADED744423FAB03E00AD0E39 /* UserView.swift */,
-			);
-			path = "View Stack";
-			sourceTree = "<group>";
-		};
 		AD7C16A523D644A500A3FEA3 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				AD6C18C92434ABCA0030CC51 /* SimpleLogger.swift */,
-				ADC9090E23C3D31300394ADF /* AppDelegate.swift */,
-				ADC9091023C3D31300394ADF /* SceneDelegate.swift */,
 				AD6C18C52434A9880030CC51 /* StorageHandler.swift */,
 			);
 			path = Infrastructure;
@@ -105,16 +55,32 @@
 			isa = PBXGroup;
 			children = (
 				AD6C18C72434AA420030CC51 /* UIApplication+Directories.swift */,
-				ADC9094123C52B8B00394ADF /* CGPoint+Help.swift */,
 			);
 			path = Help;
+			sourceTree = "<group>";
+		};
+		ADA4F1472A23C404005D4374 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADA4F14A2A23C998005D4374 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADA4F14D2A23CBC5005D4374 /* BoringListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ADC9090223C3D31300394ADF = {
 			isa = PBXGroup;
 			children = (
+				ADCEE66F2A23C1D60043C907 /* Packages */,
 				ADC9090D23C3D31300394ADF /* RazeMind */,
 				ADC9090C23C3D31300394ADF /* Products */,
+				ADA4F1472A23C404005D4374 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -131,30 +97,23 @@
 		ADC9090D23C3D31300394ADF /* RazeMind */ = {
 			isa = PBXGroup;
 			children = (
+				ADA4F14A2A23C998005D4374 /* Views */,
 				ADC9093323C3DAC900394ADF /* RazeMind.entitlements */,
-				ADC9091F23C3D31600394ADF /* Info.plist */,
 				ADC9091723C3D31500394ADF /* Assets.xcassets */,
 				AD7C16A523D644A500A3FEA3 /* Infrastructure */,
 				AD7C16A623D644C100A3FEA3 /* Help */,
 				ADC9091C23C3D31600394ADF /* LaunchScreen.storyboard */,
-				ADC9093623C5265D00394ADF /* Model */,
-				AD746F4423CCF41A00D126F3 /* View Stack */,
+				ADA4F1862A23D1B4005D4374 /* RazeMind.swift */,
 			);
 			path = RazeMind;
 			sourceTree = "<group>";
 		};
-		ADC9093623C5265D00394ADF /* Model */ = {
+		ADCEE66F2A23C1D60043C907 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				ADC9093923C5265D00394ADF /* Edge.swift */,
-				ADC9093723C5265D00394ADF /* Mesh.swift */,
-				AD6C18C324339B8B0030CC51 /* Mesh+Storage.swift */,
-				AD7C16A323D46E4D00A3FEA3 /* Mesh+Demo.swift */,
-				ADC9093B23C5265D00394ADF /* Mesh+MathHelp.swift */,
-				ADC9093A23C5265D00394ADF /* Node.swift */,
-				ADC9093823C5265D00394ADF /* SelectionHandler.swift */,
+				ADCEE6702A23C1D60043C907 /* RazeMindCore */,
 			);
-			path = Model;
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +132,9 @@
 			dependencies = (
 			);
 			name = RazeMind;
+			packageProductDependencies = (
+				ADA4F1482A23C404005D4374 /* RazeMindCore */,
+			);
 			productName = Spiral6;
 			productReference = ADC9090B23C3D31300394ADF /* RazeMind.app */;
 			productType = "com.apple.product-type.application";
@@ -183,8 +145,9 @@
 		ADC9090323C3D31300394ADF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Warren Burton";
 				TargetAttributes = {
 					ADC9090A23C3D31300394ADF = {
@@ -227,28 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD40E9BC23D9C21A004F0A07 /* SurfaceView.swift in Sources */,
-				ADC9093C23C5265D00394ADF /* Mesh.swift in Sources */,
-				ADC9094023C5265D00394ADF /* Mesh+MathHelp.swift in Sources */,
-				ADC9093D23C5265D00394ADF /* SelectionHandler.swift in Sources */,
-				ADC9093E23C5265D00394ADF /* Edge.swift in Sources */,
-				ADC9094223C52B8B00394ADF /* CGPoint+Help.swift in Sources */,
-				ADC9093F23C5265D00394ADF /* Node.swift in Sources */,
-				ADED744523FAB03E00AD0E39 /* UserView.swift in Sources */,
-				AD7C16AA23D7151900A3FEA3 /* BoringListView.swift in Sources */,
-				AD40E9BA23D9C106004F0A07 /* MapView.swift in Sources */,
-				AD7C16A423D46E4D00A3FEA3 /* Mesh+Demo.swift in Sources */,
-				ADED744123FAAEF900AD0E39 /* Helpers.swift in Sources */,
-				AD40E9B823D9BFC6004F0A07 /* EdgeMapView.swift in Sources */,
-				AD40E9B223D9BC75004F0A07 /* NodeView.swift in Sources */,
-				AD40E9B423D9BDBD004F0A07 /* EdgeView.swift in Sources */,
-				ADC9090F23C3D31300394ADF /* AppDelegate.swift in Sources */,
-				ADC9091123C3D31300394ADF /* SceneDelegate.swift in Sources */,
+				ADA4F1872A23D1B4005D4374 /* RazeMind.swift in Sources */,
+				ADA4F14E2A23CBC5005D4374 /* BoringListView.swift in Sources */,
 				AD6C18CA2434ABCA0030CC51 /* SimpleLogger.swift in Sources */,
 				AD6C18C82434AA420030CC51 /* UIApplication+Directories.swift in Sources */,
-				AD6C18C424339B8B0030CC51 /* Mesh+Storage.swift in Sources */,
 				AD6C18C62434A9880030CC51 /* StorageHandler.swift in Sources */,
-				AD40E9B623D9BE98004F0A07 /* NodeMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +238,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,6 +263,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -352,6 +301,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -370,6 +320,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,9 +340,9 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 77EQ427L36;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = RazeMind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,9 +363,9 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 77EQ427L36;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = RazeMind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,6 +400,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADA4F1482A23C404005D4374 /* RazeMindCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RazeMindCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADC9090323C3D31300394ADF /* Project object */;
 }

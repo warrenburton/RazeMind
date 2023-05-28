@@ -29,53 +29,30 @@
 import Foundation
 import CoreGraphics
 
-extension Mesh {
-  static func sampleMesh() -> Mesh {
-    let mesh = Mesh()
-    mesh.updateNodeText(mesh.rootNode(), string: "every human has a right to")
-    [(0, "shelter"),
-     (120, "food"),
-     (240, "education")].forEach({ (angle, name) in
-      let point = mesh.pointWithCenter(center: .zero, radius: 200, angle: angle.radians)
-      let node = mesh.addChild(mesh.rootNode(), at: point)
-      mesh.updateNodeText(node, string: name)
-    })
-    return mesh
-  }
+public typealias NodeID = UUID
 
-  static func sampleProceduralMesh() -> Mesh {
-    let mesh = Mesh()
-    //seed root node with 3 children
-    [0, 1, 2, 3].forEach({ index in
-      let point = mesh.pointWithCenter(center: .zero, radius: 300, angle: (index * 90 + 30).radians)
-      let node = mesh.addChild(mesh.rootNode(), at: point)
-      mesh.updateNodeText(node, string: "A\(index + 1)")
-      mesh.addChildrenRecursive(to: node, distance: 100, generation: 1)
-    })
-    return mesh
-  }
-
-  func addChildrenRecursive(to node: Node, distance: CGFloat, generation: Int) {
-    let labels = ["A", "B", "C", "D", "E", "F"]
-    guard generation < labels.count else {
-      return
+public struct Node: Identifiable {
+    public var id: NodeID = NodeID()
+    public var position: CGPoint = .zero
+    public var text: String = ""
+    
+    public init(id: NodeID = NodeID(), position: CGPoint = .zero, text: String) {
+        self.id = id
+        self.position = position
+        self.text = text
     }
 
-    let childCount = Int.random(in: 1..<4)
-    var count = 0
-    while count < childCount {
-      count += 1
-      let position = positionForNewChild(node, length: distance)
-      let child = addChild(node, at: position)
-      updateNodeText(child, string: "\(labels[generation])\(count + 1)")
-      addChildrenRecursive(to: child, distance: distance + 100.0, generation: generation + 1)
-    }
+    public var visualID: String {
+    return id.uuidString
+      + "\(text.hashValue)"
   }
 
 }
 
-extension Int {
-  var radians: CGFloat {
-    CGFloat(self) * CGFloat.pi/180.0
+public extension Node {
+  static func == (lhs: Node, rhs: Node) -> Bool {
+    return lhs.id == rhs.id
   }
 }
+
+extension Node: Codable {}

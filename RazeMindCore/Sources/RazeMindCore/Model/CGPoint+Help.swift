@@ -8,14 +8,14 @@
 
 import CoreGraphics
 
-extension CGPoint {
+public extension CGPoint {
   func translatedBy(x: CGFloat, y: CGFloat) -> CGPoint {
     return CGPoint(x: self.x + x,
                    y: self.y + y)
   }
 }
 
-extension CGPoint {
+public extension CGPoint {
 
    func alignCenterInParent(_ parent: CGSize) -> CGPoint {
      let x = parent.width/2 + self.x
@@ -29,7 +29,7 @@ extension CGPoint {
   }
  }
 
-extension CGSize {
+public extension CGSize {
    func scaledDownTo(_ factor: CGFloat) -> CGSize {
      return CGSize(width: width/factor, height: height/factor)
    }

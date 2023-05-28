@@ -20,29 +20,26 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-import UIKit
+import SwiftUI
 import RazeMindCore
 
-/// Encapsulates file ops for the mesh data
-class StorageHandler {
+@main
+struct RazeMind: App {
   
-  let documentURL = UIApplication.documentsDirectory().appendingPathComponent("default.rwmesh")
+  var mesh = restore()
+  var selection = SelectionHandler()
   
-  /// save mesh data to a single file
-  func save(_ mesh: MeshStorageProxy) throws {
-    let data = try JSONEncoder().encode(mesh)
-    try data.write(to: documentURL)
+  var body: some Scene {
+    WindowGroup {
+      SurfaceView(mesh: mesh, selection: selection)
+    }
   }
   
-  func restore() -> MeshStorageProxy {
-    do {
-      let data = try Data(contentsOf: documentURL)
-      let proxy = try JSONDecoder().decode(MeshStorageProxy.self , from: data)
-      return proxy
-    } catch {
-      DLog("*** oh no! restore error (pass to error system in full impl) -", error)
-    }
-    return Mesh().storageObject
+  static func restore() -> Mesh {
+    let proxy = StorageHandler().restore()
+    let mesh = Mesh(storage: proxy)
+    return mesh
   }
   
 }
+

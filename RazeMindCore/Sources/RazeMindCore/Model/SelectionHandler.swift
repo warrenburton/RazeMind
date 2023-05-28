@@ -26,46 +26,59 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
-import SwiftUI
+import Foundation
+import CoreGraphics
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+public struct DragInfo {
+    var id: NodeID
+    var originalPosition: CGPoint
+}
 
-  var window: UIWindow?
+public class SelectionHandler: ObservableObject {
+    
+    @Published public var draggingNodes = [DragInfo]()
+    @Published public var editingText: String = ""
 
-  @Published var mesh = restore()
-  @Published var selection = SelectionHandler()
-
-  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
-    let contentView = SurfaceView(mesh: mesh, selection: selection)
-
-    // Use a UIHostingController as window root view controller.
-    if let windowScene = scene as? UIWindowScene {
-      let window = UIWindow(windowScene: windowScene)
-      window.rootViewController = UIHostingController(rootView: contentView)
-      self.window = window
-      window.makeKeyAndVisible()
+    @Published private(set) var selectedNodeIDs = [NodeID]()
+    
+    public init(
+        draggingNodes: [DragInfo] = [DragInfo](),
+        selectedNodeIDs: [NodeID] = [NodeID](),
+        editingText: String = ""
+    ) {
+        self.draggingNodes = draggingNodes
+        self.selectedNodeIDs = selectedNodeIDs
+        self.editingText = editingText
     }
-  }
-
-  func sceneDidEnterBackground(_ scene: UIScene) {
-    save()
-  }
-  
-  func save() {
-    do {
-      try StorageHandler().save(mesh.storageObject)
-      DLog("MSG: Mesh save OK")
-    } catch {
-      DLog("ERROR: Mesh save failed -",error)
+    
+    public func selectNode(_ node: Node) {
+        selectedNodeIDs = [node.id]
+        editingText = node.text
     }
-  }
-  
-  static func restore() -> Mesh {
-    let proxy = StorageHandler().restore()
-    let mesh = Mesh(storage: proxy)
-    return mesh
-  }
-
+    
+    public  func isNodeSelected(_ node: Node) -> Bool {
+        return selectedNodeIDs.contains(node.id)
+    }
+    
+    public  func selectedNodes(in mesh: Mesh) -> [Node] {
+        return selectedNodeIDs.compactMap({ mesh.nodeWithID($0) })
+    }
+    
+    public func onlySelectedNode(in mesh: Mesh) -> Node? {
+        let selectedNodes = self.selectedNodes(in: mesh)
+        if selectedNodes.count == 1 {
+            return selectedNodes.first
+        }
+        return nil
+    }
+    
+    public   func startDragging(_ mesh: Mesh) {
+        draggingNodes = selectedNodes(in: mesh)
+            .map({ DragInfo(id: $0.id, originalPosition: $0.position) })
+    }
+    
+    public  func stopDragging(_ mesh: Mesh) {
+        draggingNodes = []
+    }
+    
 }

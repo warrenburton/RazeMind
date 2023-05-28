@@ -23,14 +23,14 @@
 import Foundation
 
 /// detach storage from Mesh logic
-struct MeshStorageProxy: Codable {
+public struct MeshStorageProxy: Codable {
   var nodes: [Node]
   var edges: [Edge]
   var rootNodeID: NodeID
 }
 
 
-extension Mesh {
+public extension Mesh {
   var storageObject: MeshStorageProxy {
     return MeshStorageProxy(nodes: nodes, edges: edges, rootNodeID: rootNodeID)
   }
